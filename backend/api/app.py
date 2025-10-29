@@ -73,7 +73,6 @@ def logout():
     flash("Sesión cerrada correctamente.", "info")
     return redirect(url_for("login"))
 
-def handler(event, context):
-    return app(event, context)
+
 
 
