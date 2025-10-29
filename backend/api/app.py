@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from flask_bcrypt import Bcrypt
 from pymongo import MongoClient
+import os
 
 app = Flask(__name__)
-app.secret_key = "clave__para_autocuidado"
+app.secret_key = os.getenv("SECRET_KEY", "clave__para_autocuidado")
 
 # Conexión a mongo
-MONGO_URI = "mongodb+srv://jaredlcctpa_db_user:f2R8wiTNztgN6fpr@cluster0autocuidado.fx7dzeb.mongodb.net/autocuidado"
+MONGO_URI = os.getenv("MONGO_URI")
 client = MongoClient(MONGO_URI)
 db = client["autocuidado"]
 users_collection = db["usuarios"]
@@ -75,3 +76,4 @@ def logout():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
