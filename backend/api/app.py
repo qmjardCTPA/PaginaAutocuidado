@@ -42,7 +42,11 @@ def login():
             return redirect(url_for("login"))
 
     return render_template("login.html")
-
+ except Exception as e:
+        # Esto imprime el traceback completo en los logs de Flask
+        app.logger.error("Exception on /login: %s", traceback.format_exc())
+        # También puedes devolver un mensaje al navegador para pruebas
+        return "Ocurrió un error en /login. Revisa los logs del servidor.", 500
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -72,6 +76,7 @@ def logout():
     session.pop("user", None)
     flash("Sesión cerrada correctamente.", "info")
     return redirect(url_for("login"))
+
 
 
 
