@@ -1,0 +1,125 @@
+/* === Paleta de colores pastel rosa ===
+Rosa principal: #F8C8DC
+Rosa claro: #FFE4EC
+Rosa medio: #F4A9C6
+Rosa intenso (botón): #E89AB2
+Gris suave: #F9F9F9
+Texto gris: #555
+*/
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #FFE4EC, #F8C8DC);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #555;
+}
+
+.login-container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 50px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #E89AB2;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: #F4A9C6;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9rem;
+  color: #E89AB2;
+  margin-bottom: 6px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid #F8C8DC;
+  border-radius: 8px;
+  background-color: #FFF8FA;
+  font-size: 1rem;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #F4A9C6;
+  outline: none;
+  box-shadow: 0 0 5px rgba(244, 169, 198, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #E89AB2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #F4A9C6;
+  transform: translateY(-2px);
+}
+
+.messages {
+  margin-top: 20px;
+}
+
+.messages p {
+  background-color: #FFE4EC;
+  border-left: 4px solid #E89AB2;
+  padding: 10px;
+  border-radius: 5px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+p.register-link {
+  margin-top: 25px;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #E89AB2;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Pequeñas animaciones para dar calidez */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.login-container {
+  animation: fadeIn 0.8s ease;
+}
